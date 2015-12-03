@@ -1,2 +1,3 @@
-# Scala-examples
-Scala examples
+# Scala examples
+
+* LinkedList
