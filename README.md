@@ -1,3 +1,4 @@
 # Scala examples
 
-* LinkedList
+* [LinkedList](https://github.com/tumakha/Scala-examples/blob/master/src/main/scala/list/LinkedList.scala)
+* [Math](https://github.com/tumakha/Scala-examples/blob/master/src/main/scala/math/Math.scala)
