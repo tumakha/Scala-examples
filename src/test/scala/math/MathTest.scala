@@ -17,7 +17,18 @@ class MathTest extends FunSuite {
     assert(factorial(5) === 120)
     assert(factorial(20) === 2432902008176640000L)
     assert(factorial(30) === BigInt("265252859812191058636308480000000"))
-    assert(factorial(50) === BigInt("30414093201713378043612608166064768844377641568960512000000000000"))
+    assert(factorial(45) === BigInt("119622220865480194561963161495657715064383733760000000000"))
+  }
+
+  test("fibonacci") {
+    assert(fibonacci(0) === 0)
+    assert(fibonacci(1) === 1)
+    assert(fibonacci(2) === 1)
+    assert(fibonacci(3) === 2)
+    assert(fibonacci(4) === 3)
+    assert(fibonacci(5) === 5)
+    assert(fibonacci(55) === 139583862445L)
+    assert(fibonacci(100) === BigInt("354224848179261915075"))
   }
 
   test("gcd") {
