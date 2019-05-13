@@ -17,4 +17,6 @@ package object Math {
 
   def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
 
+  def avg(seq: Double*): Double = seq.foldLeft((0.0, 1)) { case ((avg, n), el) => (avg + (el - avg) / n, n + 1) }._1
+
 }

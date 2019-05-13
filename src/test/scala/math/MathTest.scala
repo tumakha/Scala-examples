@@ -41,4 +41,12 @@ class MathTest extends FunSuite {
     assert(gcd(4029, 64447) === 17)
   }
 
+  test("avg") {
+    assert(avg(1) === 1)
+    assert(avg(1, 2, 3) === 2)
+    assert(avg(2, 3) === 2.5)
+    assert(avg(-11119999999999L, 11119999999999.444) === 0.22265625)
+    assert(avg() === 0.0)
+  }
+
 }
