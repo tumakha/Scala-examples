@@ -15,7 +15,17 @@ package object Math {
       case _ => fibonacci(n - 1, curr, prev + curr)
     }
 
-  def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
+  @tailrec def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
+
+  def gcd(list: Int*): Int = {
+    @tailrec def findGcd(res: Int, seq: Seq[Int]): Int =
+      seq match {
+        case Nil => res
+        case x +: xs => findGcd(gcd(res, x), xs)
+      }
+
+    findGcd(list.head, list.tail)
+  }
 
   def avg(seq: Double*): Double = seq.foldLeft((0.0, 1)) { case ((avg, n), el) => (avg + (el - avg) / n, n + 1) }._1
 

@@ -41,6 +41,19 @@ class MathTest extends FunSuite {
     assert(gcd(4029, 64447) === 17)
   }
 
+  test("gcd of multiple numbers") {
+    assert(gcd(4, 16, 256, 36) === 4)
+    assert(gcd(4, 8, 22) === 2)
+    assert(gcd(5, 25) === 5)
+    assert(gcd(7) === 7)
+  }
+
+  test("gcd of empty list") {
+    intercept[java.util.NoSuchElementException] {
+      gcd()
+    }
+  }
+
   test("avg") {
     assert(avg(1) === 1)
     assert(avg(1, 2, 3) === 2)
