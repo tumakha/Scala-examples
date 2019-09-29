@@ -15,6 +15,12 @@ package object Math {
       case _ => fibonacci(n - 1, curr, prev + curr)
     }
 
+  def fibonacci2(n: Int): BigInt = {
+    def fibStream(prev: BigInt = 0, curr: BigInt = 1): Stream[BigInt] = prev #:: fibStream(curr, prev + curr)
+
+    fibStream().drop(n).head
+  }
+
   @tailrec def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
 
   def gcd(list: Int*): Int = {

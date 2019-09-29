@@ -31,6 +31,18 @@ class MathTest extends FunSuite {
     assert(fibonacci(100) === BigInt("354224848179261915075"))
   }
 
+  test("fibonacci2") {
+    assert(fibonacci2(0) === 0)
+    assert(fibonacci2(1) === 1)
+    assert(fibonacci2(2) === 1)
+    assert(fibonacci2(3) === 2)
+    assert(fibonacci2(4) === 3)
+    assert(fibonacci2(5) === 5)
+    assert(fibonacci2(6) === 8)
+    assert(fibonacci2(55) === 139583862445L)
+    assert(fibonacci2(100) === BigInt("354224848179261915075"))
+  }
+
   test("gcd") {
     assert(gcd(1, 1) === 1)
     assert(gcd(3, 1) === 1)
