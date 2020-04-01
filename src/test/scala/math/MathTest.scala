@@ -1,6 +1,5 @@
 package math
 
-import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import Math._
@@ -8,7 +7,6 @@ import Math._
 /**
   * @author Yuriy Tumakha
   */
-@RunWith(classOf[JUnitRunner])
 class MathTest extends FunSuite {
 
   test("factorial") {

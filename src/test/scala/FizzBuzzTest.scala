@@ -1,12 +1,10 @@
 import FizzBuzz.say
-import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner
 
 /**
   * @author Yuriy Tumakha
   */
-@RunWith(classOf[JUnitRunner])
 class FizzBuzzTest extends FunSuite {
 
   test("say") {

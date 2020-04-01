@@ -1,10 +1,11 @@
 package math
 
+import scala.Function.tupled
 import scala.annotation.tailrec
 
 /**
-  * @author Yuriy Tumakha
-  */
+ * @author Yuriy Tumakha
+ */
 package object Math {
 
   def factorial(n: Int): BigInt = (1 to n).map(BigInt(_)).product
@@ -15,11 +16,9 @@ package object Math {
       case _ => fibonacci(n - 1, curr, prev + curr)
     }
 
-  def fibonacci2(n: Int): BigInt = {
-    def fibStream(prev: BigInt = 0, curr: BigInt = 1): Stream[BigInt] = prev #:: fibStream(curr, prev + curr)
+  val fibCache: Stream[BigInt] = 0 #:: 1 #:: (fibCache zip fibCache.tail).map(tupled(_ + _))
 
-    fibStream().drop(n).head
-  }
+  def fibonacci2(n: Int): BigInt = fibCache.drop(n).head
 
   @tailrec def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
 

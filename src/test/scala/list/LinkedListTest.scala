@@ -1,13 +1,10 @@
 package list
 
-import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 
 /**
   * @author Yuriy Tumakha
   */
-@RunWith(classOf[JUnitRunner])
 class LinkedListTest extends FunSuite {
 
   test("Node") {
