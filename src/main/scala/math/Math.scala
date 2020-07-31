@@ -2,6 +2,7 @@ package math
 
 import scala.Function.tupled
 import scala.annotation.tailrec
+import scala.math.pow
 
 /**
  * @author Yuriy Tumakha
@@ -16,9 +17,15 @@ package object Math {
       case _ => fibonacci(n - 1, curr, prev + curr)
     }
 
-  val fibCache: Stream[BigInt] = 0 #:: 1 #:: (fibCache zip fibCache.tail).map(tupled(_ + _))
+  val fibCache: LazyList[BigInt] = BigInt(0) #:: BigInt(1) #:: (fibCache zip fibCache.tail).map(tupled(_ + _))
 
   def fibonacci2(n: Int): BigInt = fibCache.drop(n).head
+
+  // fibonacci3
+  val root5 = pow(5, 0.5)
+  val phi = (1 + root5) / 2.0
+
+  def fibonacci3(n: Int): Long = ((pow(phi, n) - pow(-phi, -n)) / root5).toLong
 
   @tailrec def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
 

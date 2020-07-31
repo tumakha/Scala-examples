@@ -1,6 +1,5 @@
 import FizzBuzz.say
 import org.scalatest.FunSuite
-import org.scalatest.junit.JUnitRunner
 
 /**
   * @author Yuriy Tumakha

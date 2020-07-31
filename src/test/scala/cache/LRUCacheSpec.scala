@@ -1,3 +1,5 @@
+package cache
+
 import org.scalatest.{FlatSpec, Matchers}
 
 /**

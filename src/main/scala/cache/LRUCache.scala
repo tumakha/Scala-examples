@@ -1,8 +1,8 @@
-
+package cache
 import java.util.Collections.synchronizedMap
 
-import scala.collection.JavaConversions._
 import scala.collection.mutable
+import scala.jdk.CollectionConverters._
 
 /**
  * @author Yuriy Tumakha
@@ -15,5 +15,5 @@ class LRUCache[K, V](maxEntries: Int)
 }
 
 object LRUCache {
-  def apply[K, V](maxEntries: Int): mutable.Map[K, V] = synchronizedMap(new LRUCache[K, V](maxEntries))
+  def apply[K, V](maxEntries: Int): mutable.Map[K, V] = synchronizedMap(new LRUCache[K, V](maxEntries)).asScala
 }

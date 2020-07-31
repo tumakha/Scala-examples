@@ -1,6 +1,5 @@
 package math
 
-import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 import Math._
 
@@ -39,6 +38,17 @@ class MathTest extends FunSuite {
     assert(fibonacci2(6) === 8)
     assert(fibonacci2(55) === 139583862445L)
     assert(fibonacci2(100) === BigInt("354224848179261915075"))
+  }
+
+  test("fibonacci3") {
+    //assert(fibonacci3(0) === 0)
+    assert(fibonacci3(1) === 1)
+    assert(fibonacci3(2) === 1)
+    assert(fibonacci3(3) === 2)
+    assert(fibonacci3(4) === 3)
+    assert(fibonacci3(5) === 5)
+    assert(fibonacci3(6) === 8)
+    assert(fibonacci3(55) === 139583862445L)
   }
 
   test("gcd") {
