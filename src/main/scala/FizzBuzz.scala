@@ -1,7 +1,7 @@
 /**
   * @author Yuriy Tumakha
   */
-object FizzBuzz extends App {
+object FizzBuzz1 extends App {
 
   def say(number: Int): String = {
     val sb = new StringBuilder
@@ -11,6 +11,27 @@ object FizzBuzz extends App {
     sb.toString
   }
 
-  println((1 to 20).map(say).toList.mkString(", "))
+  println((1 to 20).map(say).toList)
+
+}
+
+object FizzBuzz2 extends App {
+
+  val dict = Map(3 -> "Fizz", 5 -> "Buzz")
+
+  def say(number: Int): String = {
+    val sb = new StringBuilder
+    for {
+      (key, value) <- dict
+      if number % key == 0
+    } sb ++= value
+
+    if (sb.isEmpty) sb ++= number.toString
+    sb.toString
+  }
+
+  def fizzBuzz(n: Int): List[String] = (1 to n).map(say).toList
+
+  println(fizzBuzz(20))
 
 }
