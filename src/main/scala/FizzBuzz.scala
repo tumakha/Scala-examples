@@ -20,14 +20,8 @@ object FizzBuzz2 extends App {
   val dict = Map(3 -> "Fizz", 5 -> "Buzz")
 
   def say(number: Int): String = {
-    val sb = new StringBuilder
-    for {
-      (key, value) <- dict
-      if number % key == 0
-    } sb ++= value
-
-    if (sb.isEmpty) sb ++= number.toString
-    sb.toString
+    val values = dict.filter(number % _._1 == 0).values
+    if (values.nonEmpty) values.mkString else number.toString
   }
 
   def fizzBuzz(n: Int): List[String] = (1 to n).map(say).toList
